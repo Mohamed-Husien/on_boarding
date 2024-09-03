@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomElevationButton extends StatelessWidget {
-  const CustomElevationButton(
+  CustomElevationButton(
       {super.key, required this.pageController, required this.pageIndex});
   final PageController pageController;
-  final int pageIndex;
+  int pageIndex;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
