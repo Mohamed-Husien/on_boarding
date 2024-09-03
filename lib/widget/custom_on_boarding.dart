@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:s2_flutter_app/model/on_boarding_model.dart';
 import 'package:s2_flutter_app/widget/custom_elevation_button.dart';
 
 class CustomOBoarding extends StatelessWidget {
   CustomOBoarding(
-      {super.key, required this.pageIndex, required this.pageController});
+      {super.key,
+      required this.pageIndex,
+      required this.pageController,
+      required this.onBoardingModel});
+  final OnBoardingModel onBoardingModel;
   int pageIndex;
   final PageController pageController;
   @override
@@ -18,13 +23,13 @@ class CustomOBoarding extends StatelessWidget {
             const SizedBox(
               height: 64,
             ),
-            SvgPicture.asset('assets/images/Group (1).svg'),
+            SvgPicture.asset(onBoardingModel.image),
             // const SizedBox(
             //   height: 64,
             // ),
-            const Text(
-              'Sell Houses',
-              style: TextStyle(
+            Text(
+              onBoardingModel.title,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontFamily: "Inter",
                 fontSize: 28,
@@ -33,9 +38,9 @@ class CustomOBoarding extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            const Text(
-              'Sell houses easily with the help of Listenoryx and to make this line big I am writing more.',
-              style: TextStyle(
+            Text(
+              onBoardingModel.subTitel,
+              style: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontFamily: "Inter",
                 fontSize: 17,
