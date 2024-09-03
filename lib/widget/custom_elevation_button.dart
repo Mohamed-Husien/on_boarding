@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomElevationButton extends StatelessWidget {
-  CustomElevationButton(
-      {super.key, required this.pageController, required this.pageIndex});
-  final PageController pageController;
-  int pageIndex;
+  const CustomElevationButton({super.key, required this.onTap});
+
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -15,9 +14,7 @@ class CustomElevationButton extends StatelessWidget {
         minimumSize: const Size(208, 58),
         backgroundColor: const Color(0xff87B8B5),
       ),
-      onPressed: () {
-        pageController.jumpToPage(++pageIndex);
-      },
+      onPressed: onTap,
       child: const Text(
         'Get Started',
         style: TextStyle(

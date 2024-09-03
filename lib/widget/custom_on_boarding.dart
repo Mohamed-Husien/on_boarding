@@ -77,8 +77,9 @@ class CustomOBoarding extends StatelessWidget {
               height: 64,
             ),
             CustomElevationButton(
-              pageController: pageController,
-              pageIndex: pageIndex,
+              onTap: () {
+                pageController.jumpToPage(++pageIndex);
+              },
             ),
           ],
         ),
