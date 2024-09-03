@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:s2_flutter_app/view/home_view.dart';
-import 'package:s2_flutter_app/view/on_bording_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: MyWidget(),
+      debugShowCheckedModeBanner: false,
+      home: HomeView(),
     );
   }
 }

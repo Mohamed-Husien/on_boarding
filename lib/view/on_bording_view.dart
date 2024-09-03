@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:s2_flutter_app/model/on_boarding_model.dart';
 import 'package:s2_flutter_app/widget/custom_on_boarding.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class OnBoardingView extends StatefulWidget {
+  const OnBoardingView({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<OnBoardingView> createState() => _OnBoardingViewState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _OnBoardingViewState extends State<OnBoardingView> {
   List<OnBoardingModel> pages = [
     OnBoardingModel(
       image: 'assets/images/Group (1).svg',
@@ -43,18 +43,20 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView.builder(
-      controller: _pageController,
-      onPageChanged: (value) {
-        setState(() {
-          _pageIndex = value;
-        });
-      },
-      itemCount: pages.length,
-      itemBuilder: (context, index) => CustomOBoarding(
-        onBoardingModel: pages[index],
-        pageController: _pageController,
-        pageIndex: _pageIndex,
+        body: SafeArea(
+      child: PageView.builder(
+        controller: _pageController,
+        onPageChanged: (value) {
+          setState(() {
+            _pageIndex = value;
+          });
+        },
+        itemCount: pages.length,
+        itemBuilder: (context, index) => CustomOBoarding(
+          onBoardingModel: pages[index],
+          pageController: _pageController,
+          pageIndex: _pageIndex,
+        ),
       ),
     ));
   }

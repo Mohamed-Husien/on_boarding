@@ -9,13 +9,14 @@ class CustomOBoarding extends StatelessWidget {
       required this.pageIndex,
       required this.pageController,
       required this.onBoardingModel});
+
   final OnBoardingModel onBoardingModel;
   int pageIndex;
   final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 76, right: 40, left: 40, bottom: 72),
+      padding: const EdgeInsets.only(top: 32, right: 40, left: 40, bottom: 72),
       child: Center(
         child: Column(
           children: [
@@ -24,9 +25,9 @@ class CustomOBoarding extends StatelessWidget {
               height: 64,
             ),
             SvgPicture.asset(onBoardingModel.image),
-            // const SizedBox(
-            //   height: 64,
-            // ),
+            const SizedBox(
+              height: 32,
+            ),
             Text(
               onBoardingModel.title,
               style: const TextStyle(
